@@ -1,6 +1,6 @@
 name : simple workflow
 #simple workflow for testing
-on : [push]
+on : [workflow_dispath]
 
 jobs:
   run-shell-command:
