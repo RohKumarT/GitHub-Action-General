@@ -10,7 +10,7 @@ jobs:
         run : echo "hello world"
       - name : check versions
         run: |
-          docker versions
-          mvn --versions
+          docker version
+          mvn --version
           echo JAVA_HOME
         
