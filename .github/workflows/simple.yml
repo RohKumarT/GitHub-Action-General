@@ -1,5 +1,5 @@
 name : simple workflow
-
+#simple workflow for testing
 on : [push]
 
 jobs:
@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: echo 
         run : echo "hello world"
+        shell: sh
+        
       - name : check versions
         run: |
           docker version
