@@ -17,3 +17,13 @@ jobs:
         
       - name: log time
         run: echo "${{ steps.greet.outputs.time }}"
+        
+      - name : run commands
+        run: |
+          pwd
+          ls -al
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          echo ${{ github.token }}
+          
