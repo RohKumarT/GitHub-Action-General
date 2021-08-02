@@ -1,0 +1,16 @@
+name : action workflow
+
+on: [push, pull_request]
+
+jobs:
+  run-js-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: js action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Guns N Roses
+        
+      - name: log time
+        run: echo "${{ steps.greet.outputs.time }}"

@@ -1,6 +1,6 @@
 name : simple workflow
 #simple workflow for testing
-on : [workflow_dispath]
+on : [workflow_dispatch]
 
 jobs:
   run-shell-command:
