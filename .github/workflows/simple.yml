@@ -1,0 +1,16 @@
+name : simple workflow
+
+on : [push]
+
+jobs:
+  simple-shell-command:
+  runs-on: ubuntu:latest
+  steps:
+    - name: echo 
+      run : echo "hello world"
+    - name : check versions
+      run: |
+        docker versions
+        mvn --versions
+        echo JAVA_HOME
+        
