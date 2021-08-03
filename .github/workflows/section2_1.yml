@@ -1,0 +1,17 @@
+name: section 2 workflow
+
+on: [push,pull_request]
+
+jobs:
+  
+  run-shell-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: |
+          echo $GITHUB_EVENT
+          echo $GITHUB_REPOSITORY
+          
+      - name: printing the environments variables
+        run: printenv
+      
