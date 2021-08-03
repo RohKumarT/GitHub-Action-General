@@ -9,9 +9,9 @@ jobs:
     steps:
       - name: echo
         run: |
-          echo $GITHUB_EVENT
+          echo $GITHUB_EVENT_NAME
           echo $GITHUB_REPOSITORY
           
       - name: printing the environments variables
-        run: printenv
+        run: printenv | grep GITHUB
       
