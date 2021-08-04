@@ -11,4 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: building it
-        run: ${ toJson(github) }
+        run: |
+          cat << OBJECT
+          ${{ toJson(github) }}
+          OBJECT
