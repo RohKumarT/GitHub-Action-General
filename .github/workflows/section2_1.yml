@@ -20,5 +20,5 @@ jobs:
           echo $GITHUB_REPOSITORY
           
       - name: printing the environments variables
-        run: printenv | grep GITHUB
+        run: echo ${{ github.event.client_payload.env }}
       
