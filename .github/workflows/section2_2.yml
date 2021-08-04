@@ -1,0 +1,14 @@
+name: section2_2 workflow
+
+on: 
+  push:
+    branches:
+      - master
+      
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    steps:
+      - name: building it
+        run: echo ${{ toJson(github) }}
