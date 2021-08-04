@@ -4,6 +4,17 @@ on:
   push:
     branches:
       - master
+      - 'feature/*'
+      - 'feature/**'
+      - '!feature/featC'
+#    branches-ignore:
+#      - develope
+    tags:
+      - v1.*
+    paths:
+      - '**.js'
+#    paths-ignore:
+#      - 'Docs/**'
       
 jobs:
   build:
