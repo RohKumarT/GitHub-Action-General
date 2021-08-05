@@ -1,6 +1,6 @@
 name: environment workflow
 
-on: push
+on: workflow_dispatch
 
 env:
   WF_ENV: workflow env variable

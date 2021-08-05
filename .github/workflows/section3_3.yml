@@ -1,0 +1,27 @@
+name: repository push
+
+on: push
+
+jobs:
+
+  push-file:
+  
+    runs-on: ubuntu-latest
+    steps:
+      - name: push the file
+        run: |
+          pwd
+          ls
+          git init
+          git remote add origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.name "rohit"
+          git config --global user.email "rohit@bajwa"
+          git fetch
+          git checkout master
+          git branch --set-upstream-to=origin/master
+          git pull
+          ls -al
+          echo $RANDOM >> Random.txt
+          git add -A
+          git commit -m "Added random file"
+          git push
