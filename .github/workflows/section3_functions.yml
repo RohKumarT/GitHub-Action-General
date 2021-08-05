@@ -16,7 +16,7 @@ jobs:
           echo ${{ startsWith('Hello world', 'He') }}
           echo ${{ endsWith('Hello world', 'ld') }}
           echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
- #         echo ${{ join(github.event.issue.labels.*.name, ', ') }}
+#         echo ${{ join(github.event.issue.labels.*.name, ', ') }}
           echo ${{ toJSON(job) }}
           echo ${{ join(github.event.issue.labels.*.name, ', ') }}
           touch test.txt
