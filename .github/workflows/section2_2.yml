@@ -4,15 +4,15 @@ on: workflow_dispatch
 #  push:
 #    branches:
 #      - master
- #     - 'feature/*'
- #     - 'feature/**'
- #     - '!feature/featC'
+#     - 'feature/*'
+#     - 'feature/**'
+#     - '!feature/featC'
 #    branches-ignore:
 #      - develope
- #   tags:
-      - v1.*
- #   paths:
-      - '**.js'
+#   tags:
+#      - v1.*
+#   paths:
+#      - '**.js'
 #    paths-ignore:
 #      - 'Docs/**'
       
