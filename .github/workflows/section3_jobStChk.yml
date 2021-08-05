@@ -1,0 +1,29 @@
+name: job status check
+
+on: [push, pull_request]
+
+jobs:
+
+  only-pull:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - name: on pull request
+        run: echo "this runs only on pull request"
+        
+  on-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: will fail
+        run: eecho "failure"
+        
+      - name: will run on failure
+        if: ${{ failure() }}
+        run: echo "i ran on failure"
+        
+      - name: will run always
+        if: ${{ always() }}
+        run: echo "i will always run"
+        
+      - name: not sure if will run
+        run: echo "did i run?"
