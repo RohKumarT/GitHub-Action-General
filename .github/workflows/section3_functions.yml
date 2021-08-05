@@ -1,0 +1,34 @@
+name: function workflow
+
+on: push
+
+jobs:
+
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: check functions
+        run: |
+          echo ${{ contains(github.event.issue.labels.*.name, 'bug') }}
+          echo ${{ contains('Hello world', 'llo') }}
+          echo ${{ startsWith('Hello world', 'He') }}
+          echo ${{ endsWith('Hello world', 'ld') }}
+          echo ${{ format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat') }}
+          echo ${{ join(github.event.issue.labels.*.name, ', ') }}
+          echo ${{ toJSON(job) }}
+          echo ${{ join(github.event.issue.labels.*.name, ', ') }}
+          touch test.txt
+          echo ${{ hashFiles('test.txt') }}
+        
+      - name: set matrix   
+        id: set-matrix
+        run: echo "::set-output name=matrix::{\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}"
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{fromJSON(needs.job1.outputs.matrix)}}
+    steps:
+      - run: build
