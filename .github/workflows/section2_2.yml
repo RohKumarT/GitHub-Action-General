@@ -1,17 +1,17 @@
 name: section2_2 workflow
 
-on: 
-  push:
-    branches:
-      - master
-      - 'feature/*'
-      - 'feature/**'
-      - '!feature/featC'
+on: workflow_dispatch
+#  push:
+#    branches:
+#      - master
+ #     - 'feature/*'
+ #     - 'feature/**'
+ #     - '!feature/featC'
 #    branches-ignore:
 #      - develope
-    tags:
+ #   tags:
       - v1.*
-    paths:
+ #   paths:
       - '**.js'
 #    paths-ignore:
 #      - 'Docs/**'
