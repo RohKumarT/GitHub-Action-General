@@ -5,9 +5,11 @@ on: push
 jobs:
   run-on-error:
     runs-on: ubuntu-latest
+    timeout-minutes: 1
     steps:
       - name: error steps
         run: eecho "error"
+        timeout-minutes: 1
         continue-on-error: true
       
       - name: job context
