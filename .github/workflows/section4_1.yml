@@ -1,0 +1,23 @@
+name: continue on error
+
+on: push
+
+jobs:
+
+  run-on-error:
+    runs-on: ubuntu-latest
+    steps:
+      - name: error steps
+        run: eecho "error"
+        continue-on-error: true
+        
+      - name: job context
+        run: echo $JOB_CONTEXT
+        env: 
+          JOB_CONTEXT: ${{ toJSON(jobs) }}
+          
+      - name: steps context
+        run: echo $STEP_CONTEXT
+        env:
+          STEP_CONTEXT: ${{ toJSON(steps) }}
+          
