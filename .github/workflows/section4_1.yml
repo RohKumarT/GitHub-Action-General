@@ -3,7 +3,6 @@ name: continue on error
 on: push
 
 jobs:
-
   run-on-error:
     runs-on: ubuntu-latest
     steps:
@@ -14,7 +13,7 @@ jobs:
       - name: job context
         run: echo $JOB_CONTEXT
         env: 
-          JOB_CONTEXT: ${{ toJSON(jobs) }}
+          JOB_CONTEXT: ${{ toJSON(job) }}
          
       - name: steps context
         run: echo $STEP_CONTEXT
