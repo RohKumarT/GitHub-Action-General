@@ -1,6 +1,6 @@
 name: continue on error
 
-on: push
+on: workflow_dispatch
 
 jobs:
   run-on-error:
