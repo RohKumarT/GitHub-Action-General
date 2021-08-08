@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest,ubuntu-latest,windows-latest]
-        node_version: [6, 7, 8]
+        node_version: [12, 13, 14]
     steps:
       - name: log node version
         run: node -v
