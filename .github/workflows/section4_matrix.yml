@@ -5,16 +5,32 @@ on : push
 jobs:
   node-version:
     runs-on: ${{ matrix.os }}
+    env:
+      IS_UBUNTU_14: ${{ matrix.is_ubuntu_14 }}
     strategy:
       matrix:
         os: [macos-latest,ubuntu-latest,windows-latest]
         node_version: [12, 13, 14]
+        exclude:
+          - os: ubuntu-latest
+            node_version: 12
+          - os: ubuntu-latest
+            node_version: 13
+        include:
+          - os: ubuntu-latest
+            node_version: 14
+            is_ubuntu_14: "true"
+         
     steps:
       - name: log node version
-        run: node -v
+        run: |       
+          echo IS_UBUNTU_14
+          node -v
       - name: setup node
         uses: actions/setup-node@v1
         with:
           node-version: $(( matrix.node_version }}
       - name: log node version
-        run: node -v          
+        run: |
+          echo IS_UBUNTU_14
+          node -v          
