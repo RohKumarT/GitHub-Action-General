@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: log node version
         run: |       
-          echo IS_UBUNTU_14
+          echo $IS_UBUNTU_14
           node -v
       - name: setup node
         uses: actions/setup-node@v1
@@ -32,5 +32,5 @@ jobs:
           node-version: $(( matrix.node_version }}
       - name: log node version
         run: |
-          echo IS_UBUNTU_14
+          echo $IS_UBUNTU_14
           node -v          
