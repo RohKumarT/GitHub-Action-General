@@ -1,6 +1,6 @@
 name : matrix workflow
 
-on : push
+on : workflow_dispatch
 
 jobs:
   node-version:

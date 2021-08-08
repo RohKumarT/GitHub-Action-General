@@ -1,0 +1,16 @@
+name: container
+
+on: push
+
+jobs:
+  node-container:
+    runs-on: ubuntu-latest
+    container:
+      image: node:13.5.0-alpine3.10
+    steps:
+      - name: container version
+        run: |
+          node -v
+          cat /etc/os-release
+          
+    
