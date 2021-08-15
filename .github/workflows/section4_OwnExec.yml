@@ -1,6 +1,6 @@
 name: Own Excutable
 
-on: push
+on: workflow_dispatch
 
 jobs:
   own-exec:
