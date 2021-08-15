@@ -1,6 +1,6 @@
 name: container
 
-on: push
+on: workflow_dispatch
 
 jobs:
   node-container:
