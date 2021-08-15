@@ -1,6 +1,6 @@
 name : Slack Message
 
-on: push
+on: workflow_dispatch
 
 jobs:
   slack-message:
