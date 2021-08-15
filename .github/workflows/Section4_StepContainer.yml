@@ -1,6 +1,6 @@
 name: step container
 
-on: push
+on: workflow_dispatch
 
 jobs:
   step-container:
